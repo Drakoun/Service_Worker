@@ -11,7 +11,16 @@ if ('serviceWorker' in navigator) {
 			var result = document.querySelector('.result');
 			
 			var worker = new Worker("worker.js");
-			
+			this.addEventListener('install', function(event) {
+	// Perform install steps
+		event.waitUntil(
+			caches.open(CACHE_NAME)
+				.then(function(cache) {
+					console.log('Opened cache');
+					return cache.addAll(urlsToCache);
+				})
+		);
+});
 			nombre.onchange = function() {
 				worker.postMessage([nombre.value]);
 				console.log('Message posted to worker');
