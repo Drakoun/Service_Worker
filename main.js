@@ -10,11 +10,11 @@ if ('serviceWorker' in navigator) {
 			var worker = new Worker("worker.js");
 			
 			nombre.onchange = function() {
-				Worker.postMessage([nombre.value]);
+				worker.postMessage([nombre.value]);
 				console.log('Message posted to worker');
 			};
 			
-			Worker.onmessage = function(e) {
+			worker.onmessage = function(e) {
 				result.textContent = e.data;
 				console.log('Message received from worker');
 			};
