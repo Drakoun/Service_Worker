@@ -4,7 +4,7 @@ this.addEventListener('install', function(event) {
 			caches.open('my-site-cache-v1')
 				.then(function(cache) {
 					console.log('Opened cache');
-					return cache.addAll(['/',/worker.js','/main.js']);
+					return cache.addAll(['/','/worker.js','/main.js']);
 				})
 		);
 });
