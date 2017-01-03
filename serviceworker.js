@@ -15,8 +15,10 @@ this.addEventListener('fetch', function(event) {
       .then(function(response) {
         // Cache hit - return response
         if (response) {
+		  console.log('return le cache trouvé');
           return response;
         }
+		console.log('on fetch');
         return fetch(event.request);
       }
     )
