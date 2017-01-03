@@ -14,7 +14,7 @@ if ('serviceWorker' in navigator) {
 				console.log('Message posted to worker');
 			};
 			
-			myWorker.onmessage = function(e) {
+			Worker.onmessage = function(e) {
 				result.textContent = e.data;
 				console.log('Message received from worker');
 			};
