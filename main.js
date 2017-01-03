@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator) {
 			var CACHE_NAME = 'my-site-cache-v1';
 			var urlsToCache = ['/worker.js','/main.js'];
 
-			self.addEventListener('install', function(event) {
+			this..addEventListener('install', function(event) {
 				// Perform install steps
 					event.waitUntil(
 						caches.open(CACHE_NAME)
